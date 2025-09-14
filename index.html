@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Career Institute</title>
+    <link rel="icon" href="./assets/icon/download (1).png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .navbar {
+        background-color: #111 !important;
+      }
+
+      .navbar-brand,
+      .nav-link,
+      .dropdown-toggle {
+        color: #fff !important;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover,
+      .dropdown-item:hover {
+        color: #ccc !important;
+      }
+
+      .dropdown-menu {
+        background-color: #222;
+      }
+
+      .dropdown-item {
+        color: #fff;
+      }
+
+      .hero {
+        background: url("https://via.placeholder.com/1400x500?text=Welcome+to+Career+Institute")
+          center/cover no-repeat;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero h1 {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+        color: #fff;
+      }
+
+      .card {
+        background-color: #111;
+        color: #fff;
+        border: 1px solid #333;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      }
+
+      footer {
+        background-color: #111;
+        color: #ccc;
+      }
+
+      .btn-outline-success {
+        color: #fff;
+        border-color: #ccc;
+      }
+
+      .btn-outline-success:hover {
+        background-color: #fff;
+        color: #000;
+      }
+         .modal-content {
+      background-color: #000;
+      color: #fff;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./assets/icon/download (1).png">Career Institute</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#courses">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+            <li><button style="color: white;" type="button" class="btn btn-bordered-primary position-relative">
+  notification
+  <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+    9+
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button></li>
+          </ul>
+          <!-- modl btn for sign up -->
+    <button style="margin-right: 10px;" type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#fullscreenModal">
+      sign up
+    </button>
+
+   <!-- modl btn for login -->
+ <button type="button2" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#fullscreenModal2">
+    login
+    </button>
+        </div>
+      </div>
+    </nav>
+  <!-- Modal for signup -->
+     <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h2 class="modal-title" id="fullscreenModalLabel">SIGN UP TO REGISTER</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p> <fieldset>
+    <legend><strong>Fill the above form to Signup</strong></legend>
+    <form id="sign up form" action="/signup" method="post" autocomplete="on">
+  
+      <label for="fullname">Full Name:</label><br>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter Name" required><br><br>
+  
+      <label for="email">Email Address:</label><br>
+      <input type="email" id="email" name="email" placeholder="Example@mail.com" required><br><br>
+  
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" placeholder="Enter Username" required><br><br>
+  
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" placeholder="Enter Password" required><br><br>
+  
+      <label for="confirm-password">Confirm Password:</label><br>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required><br><br>
+        <p>Already have an account? <a href="button2">Log in</a></p>
+    </fieldset>
+    </form></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light me-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-outline-light me-2" data-bs-dismiss="modal">sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal for login -->
+  <div class="modal fade" id="fullscreenModal2" tabindex="-1" aria-labelledby="fullscreenModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h2 class="modal-title" id="fullscreenModal2Label">LOGIN TO GET ACCESS</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+<fieldset>
+<legend><strong>Fill the above form to login</strong></legend>
+    <form id="login form" action="/login" method="post" autocomplete="on">
+      
+      <label for="username">Username or Email:</label><br>
+      <input type="text" id="username" name="username" placeholder="Enter Username or email" required><br><br>
+  
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" placeholder="Enter Password" required><br><br>
+      <p><a href="#">Forgot your password?</a></p>
+    </fieldset>
+    </form>
+        </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light me-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-outline-light me-2" data-bs-dismiss="modal">login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--carsol slider-->
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./assets/comp2.jpg"
+            class="d-block w-100"
+            width="2px"
+            height="600px"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Innovative Software Solutions</h5>
+            <p>
+              Delivering custom-built applications tailored to your business
+              needs — scalable, secure, and future-ready.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/comp.jpg"
+            class="d-block w-100"
+            width="2px"
+            height="600px"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Seamless Cloud Integration</h5>
+            <p>
+              Empower your operations with cloud services that ensure
+              flexibility, performance, and data security.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/comp1.jpg"
+            class="d-block w-100"
+            width="2px"
+            height="600px"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>IT Consulting & Support</h5>
+            <p>
+              From strategy to implementation, our experts guide you every step
+              of the way to drive digital success.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Home Section -->
+    <div class="hero" id="home">
+      <div class="container">
+        <h1>Welcome to Career Institute</h1>
+        <p>Empowering your future with professional IT training</p>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+      <div class="container">
+        <h2 class="text-center mb-4">About Us</h2>
+        <p class="text-center">
+          Career Institute offers hands-on training in Web Development, Graphic
+          Design, and Digital Marketing. Our goal is to prepare students with
+          practical skills for real-world success.
+        </p>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+
+    <section class="py-5 bg-black" id="courses">
+      <div class="container">
+        <h2 class="text-center mb-4">Our Courses</h2>
+        <div class="row g-4">
+          <div class="container mt-1">
+            <div class="row">
+              <!-- Card 1 -->
+              <div class="col-md-3">
+                <div
+                  class="card m-2 shadow-lg text-center overflow-hidden border-3 shadow"
+                  style="width: 100%"
+                >
+                  <img
+                    src="./assets/web.jpg"
+                    height="200px"
+                    width="800px"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body bg-dark text-light">
+                    <h5 class="card-title">Web Development</h5>
+                    <p class="card-text">
+                      HTML, CSS, JavaScript, React, PHP, Laravel and more.
+                    </p>
+                    <p class="m-0">700$</p>
+                    <p class="m-2" style="text-decoration: line-through">
+                      1000$
+                    </p>
+                    <a href="#" class="btn btn-light px-1"
+                      >Register now</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-md-3">
+                <div
+                  class="card m-2  text-center overflow-hidden border-3 shadow"
+                  box-shadow="20px 20px 20px white"
+                  style="width: 100%"
+                >
+                  <img
+                    src="./assets/graphic.jpg"
+                    height="200px"
+                    width="800px"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body bg-dark text-light">
+                    <h5 class="card-title">Graphic Design</h5>
+                    <p class="card-text">
+                      Photoshop, Illustrator, InDesign and more.
+                    </p>
+                    <p class="m-0">500$</p>
+                    <p class="m-2" style="text-decoration: line-through">
+                      800$
+                    </p>
+                    <a href="#" class="btn btn-light px-1"
+                      >Register now</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-md-3">
+                <div
+                  class="card m-2  text-center overflow-hidden border-3 shadow"
+                  box-shadow="20px 20px 20px white"
+                  style="width: 100%"
+                >
+                  <img
+                    src="./assets/office.jpg"
+                    height="200px"
+                    width="800px"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body bg-dark text-light">
+                    <h5 class="card-title">Office Management</h5>
+                    <p class="card-text">Word, Powerpoint, Excel and more.</p>
+                    <p class="m-0">700$</p>
+                    <p class="m-2" style="text-decoration: line-through">
+                      900$
+                    </p>
+                    <a href="#" class="btn btn-light px-1"
+                      >Register now</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="col-md-3">
+                <div
+                  class="card m-1 text-center overflow-hidden border-3 shadow"
+                  box-shadow="20px 20px 20px white"
+                  style="width: 100%"
+                >
+                  <img
+                    src="./assets/app.jpg"
+                    height="200px"
+                    width="800px"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body bg-dark text-light">
+                    <h5 class="card-title">App Development</h5>
+                    <p class="card-text">
+                      Android, Flutter, React Native, Kotlin and more.
+                    </p>
+                    <p class="m-0">900$</p>
+                    <p class="m-2" style="text-decoration: line-through">
+                      1200$
+                    </p>
+                    <a href="#" class="btn btn-light px-1 "
+                      >Register now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+      <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <p class="text-center mb-5">
+          Have questions? Reach out to us and we’ll get back to you as soon as
+          possible.
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  placeholder="Subject of your message"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Write your message here"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-outline-success w-100">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--location-->
+   <div class="container">
+  <h3>Find Us Here</h3>
+  <div class="ratio ratio-16x9">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=..."
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="py-4 mt-5">
+      <div class="container text-center">
+        <p>&copy; 2025 Career Institute. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
